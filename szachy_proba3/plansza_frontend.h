@@ -22,6 +22,9 @@ public:
     explicit PlanszaFrontend(QWidget *parent = 0);
     // PlanszaFrontend(QWidget *parent);
     void paintEvent(QPainter * painter);
+    std::vector<FiguraFrontend*> zbiteBiale;
+      std::vector<FiguraFrontend*> zbiteCzarne;
+
 
 };
 

@@ -10,6 +10,7 @@ QWidget(parent)
 
     for (int x=0;x<8;x++)
         for(int y=0;y<8;y++)
+
             figury[x][y]=nullptr;
 
     for(int x = 0; x < 8; x++) {
@@ -105,17 +106,21 @@ void PlanszaFrontend::mousePressEvent(QMouseEvent *event){
     }
 
     if(plansza.przesunFigure(staryX,staryY,x,y)){
+        if(figury[x][y]!= nullptr)
+        {
+            //std::cout<<"sprawdzenie if";
+        }
         figury[x][y]=figury[staryX][staryY];
 
         figury[staryX][staryY]=nullptr;
-
+        //qInfo()<<"sprawdzenie informacji ";
     }staryX=-1;
 //qInfo()<<"TO JEST X "<<x;
    // qInfo()<<"to jest Y"<<y;
 }
 
 void PlanszaFrontend::mouseMoveEvent(QMouseEvent *event)
-{qInfo()<<"to jest test";
+{//qInfo()<<"to jest test";
     m_lastPos = event->pos();
     update();
       //nowy_punkt= event->pos();
